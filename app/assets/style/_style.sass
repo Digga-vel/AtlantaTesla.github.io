@@ -1,0 +1,1217 @@
+$width-all: 1700px
+$blue: #709dca
+$orange: #ffc155
+
+@mixin background-gradient($params)
+  background-image: -webkit-linear-gradient($params)
+  background-image: -ms-linear-gradient($params)
+  background-image: linear-gradient($params)
+
+%flex
+  display: -ms-flex
+  display: flex
+
+@mixin flex-wrap($value)
+  -ms-flex-wrap: $value
+  flex-wrap: $value
+
+@mixin justify-content($value)
+  -ms-justify-content: $value
+  justify-content: $value
+
+
+
+%min-width-all
+  min-width: 300px
+
+%title
+  font-family: "montserratblack", sans-serif
+  font-size: 30px
+  text-transform: uppercase
+
+%logo
+  display: block
+
+%input
+  width: 99.6%
+  height: 100%
+  box-sizing: border-box
+  border-radius: 2px
+  padding-left: 44px
+  border: 0
+  &:focus
+    outline: none
+  &::placeholder
+    font-family: open_sansregular, sans-serif
+    color: #a9a9a9
+    font-size: 13px
+    font-weight: 400
+
+%btn
+  height: 46px
+  border-radius: 2px
+  text-transform: uppercase
+  font-size: 14px
+  color: #fff
+  box-sizing: border-box
+  line-height: 46px
+  border: 0
+  position: relative
+  @include background-gradient((top, #ffd5a0, #ffc155 35%, #f5b755 90%))
+  background-color: $orange
+  border-bottom: 2px solid rgb(208, 146, 54)
+  &:hover
+    @include background-gradient((top, #ffc88c, #ffba41 35%, #f5b137 90%))
+    background-color: #f8bb53
+  &:active
+    border-bottom: none
+    outline: none
+    top: 2px
+  &:focus
+    outline: none
+
+%wrap
+  width: 281px
+  position: relative
+  height: 46px
+  margin-top: 18px
+  margin-right: 10px
+
+%icon-input
+  font-family: "Font Awesome 5 Free"
+  font-size: 16px
+  top: 30%
+  left: 16px
+  color: #6e6e6e
+  position: absolute
+
+%clearfix
+  content: ""
+  display: table
+  clear: both
+
+html, body
+  height: 100%
+
+.header
+  &__container
+    @extend %min-width-all
+    width: 1169px
+    max-width: 96.5%
+    margin: 0 auto
+    height: 93px
+    padding-top: 1px
+    transition: height .5s
+  &__logo
+    @extend %logo
+    margin-right: 26%
+    margin-top: 20px
+    float: left
+    height: 48px
+    width: 50px
+  &__nav
+    vertical-align: middle
+    margin-top: 30px
+.logo__pic
+  display: block
+  height: 48px
+  width: 50px
+
+.menu__trigger
+  box-sizing: border-box
+  float: right
+  font-family: latoregular, sans-serif
+  color: #868686
+  font-size: 18px
+  line-height: 34px
+  text-transform: uppercase
+  padding: 0 25px
+  background-color: #fff
+  margin-top: 30px
+  display: none
+  &:hover
+    background-color: $orange
+    color: #fff
+.nav
+  &__menu
+    margin: 0
+  &__item
+    float: left
+    transition: height .5s
+  &__link
+    font-family: latoregular, sans-serif
+    color: #868686
+    font-size: 13.5px
+    line-height: 34px
+    text-transform: uppercase
+    padding: 0 19px
+    display: block
+    background-color: #fff
+    transition: background-color .2s
+    &:hover
+      background-color: $orange
+      color: #fff
+
+.request
+  background-color: $blue
+  text-align: center
+  position: relative
+  z-index: 2
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    min-height: 589px
+    margin: 0 auto
+    box-sizing: border-box
+    padding: 1px 20px
+  &__title
+    font-family: montserratblack, sans-serif
+    font-size: 33px
+    text-transform: uppercase
+    color: #fff
+    margin: 105px 0 0 0
+  &__text
+    font-family: open_sanslight, sans-serif
+    font-weight: 300
+    font-size: 16px
+    color: #fff
+    margin: 0
+  &__form
+    text-align: left
+    @extend %flex
+    @include justify-content(center)
+    @include flex-wrap(nowrap)
+    margin: 15px auto 0
+  &__wrap-name
+    @extend %wrap
+    &::before
+      @extend %icon-input
+      content: "\f007"
+  &__name
+    @extend %input
+  &__wrap-email
+    @extend %wrap
+    &::before
+      @extend %icon-input
+      content: "\f0e0"
+  &__email
+    @extend %input
+  &__wrap-phone
+    @extend %wrap
+    &::before
+      @extend %icon-input
+      content: "\f095"
+      transform: scaleX(-1)
+  &__phone
+    @extend %input
+  &__btn
+    @extend %btn
+    width: 211px
+    font-family: open_sansregular, sans-serif
+    margin-top: 18px
+  &__slider
+    width: 647px
+    height: 380px
+    margin: 67px auto -99px
+
+.slider
+  &__top
+    width: 484px
+    height: 314px
+    border-top: 1px solid transparent
+    background-color: #000
+    margin: 0 auto
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+  &__screen
+    height: 264px
+    width: 445px
+    margin: 19px auto 0
+  &__box
+    height: 100%
+    width: 100%
+    box-sizing: border-box
+    background: #ff8b15
+  &__clip
+    height: 264px
+    width: 445px
+    box-sizing: border-box
+  &__img
+    width: 100%
+  &__medium
+    width: 646px
+    height: 18px
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+    background:  linear-gradient(90deg, #acaeaf 1%, #f4f2f5 3%, #acaeaf 10%, #f4f2f5 50%, #B8B9B9 78%, #f4f2f5 97%, #acaeaf 99%)
+  &__btn
+    width: 89px
+    height: 9px
+    margin: 0 auto
+    border-bottom-left-radius: 8px
+    border-bottom-right-radius: 8px
+    border: 1px solid #989b9c
+    border-top: none
+    background: linear-gradient(#dfe1e3 40%, #666b6b)
+  &__right
+    height: 3px
+    width: 18px
+    background-color: #5f6767
+    float: right
+    margin-right: 28px
+    border-top-left-radius: 2px
+    border-top-right-radius: 2px
+  &__bottom
+    width: 603px
+    margin: 0 auto
+    border-top: 8px solid #5f6767
+    border-left: 19px solid transparent
+    border-right: 19px solid transparent
+    height: 0
+    position: relative
+    top: -1px
+    z-index: -1
+.slick-dots
+  bottom: -85px
+  li
+    height: 12px
+    width: 12px
+    button
+      height: 12px
+      width: 12px
+      &:hover
+        border-color: #1ca8dd
+      &::before
+        height: 12px
+        width: 12px
+        border: 2px solid #dedfe0
+        border-radius: 50%
+        content: ""
+        opacity: 1
+    &.slick-active button:before
+      border-color: #1ca8dd
+
+.service
+  background-color: #fff
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    min-height: 923px
+  &__title
+    @extend %title
+    color: #394b50
+    font-weight: 400
+    text-align: center
+    margin-top: 198px
+  &__text
+    font-family: open_sansregular, sans-serif
+    color: #394b50
+    font-size: 16px
+    font-weight: 400
+    text-align: center
+    margin: 0
+  &__wrap
+    @extend %flex
+    @include justify-content(center)
+    @include flex-wrap(wrap)
+    margin: 14px 0 155px
+  &__article
+    width: 521px
+    max-width: 42%
+    margin: 79px 48px 0
+    text-align: left
+  &__subtitle
+    font-family: latobold, sans-serif, sans-serif
+    font-size: 16px
+    font-weight: 700
+    overflow: hidden
+    text-transform: uppercase
+    margin-bottom: 15px
+  &__paragraph
+    font-family: open_sansregular, sans-serif, sans-serif
+    color: #7b7b7b
+    font-size: 13px
+    font-weight: 400
+    overflow: hidden
+    line-height: 22px
+  &__icon
+    color: #709ec8
+    font-weight: 100
+    margin-right: 33px
+    float: left
+    font-size: 45px
+    width: 56px
+    height: 45px
+    text-align: center
+    transition: color .2s
+    &:hover
+      color: rgba(246, 119, 44, 0.95)
+
+
+.about
+  background-color: $orange
+  &__container
+    @extend %min-width-all
+    min-height: 623px
+    max-width: $width-all
+    margin: 0 auto
+    box-sizing: border-box
+    position: relative
+    padding-right: 20px
+    &::after
+      @extend %clearfix
+  &__pic
+    height: 100%
+    width: 50%
+    background: url(../images/img_4.jpg) no-repeat 100%
+    background-size: cover
+    position: absolute
+  &__wrap
+    max-width: 505px
+    padding: 1px 0 0 55%
+  &__title
+    @extend %title
+    text-align: left
+    color: #fff
+    margin-top: 164px
+  &__text
+    font-family: open_sansregular, sans-serif
+    text-align: left
+    color: #fff
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+    margin-top: 28px
+  &__btn
+    @extend %btn
+    width: 145px
+    background: $orange none
+    border: 1px solid #e7ad48
+    font-family: latoregular, sans-serif
+    text-align: center
+    margin-top: 33px
+    margin-bottom: 74px
+    transition: background-color .2s
+    &:hover
+      background: #e7ad48 none
+
+.price
+  background-color: #e7edf3
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    min-height: 898px
+    text-align: center
+  &__title
+    @extend %title
+    color: #394b50
+    margin-top: 137px
+  &__text
+    font-family: latolight, sans-serif
+    color: #75888d
+    font-size: 18px
+    font-weight: 300
+    line-height: 22px
+  &__wrap
+    text-transform: uppercase
+    @extend %flex
+    margin: 79px auto 0
+    width: 1168px
+    max-width: 96.6%
+  &__plan
+    width: 391px
+    max-width: 33%
+    height: 441px
+    border: 1px solid #ccd5df
+    border-radius: 3px
+    box-sizing: border-box
+    background-color: #ffffff
+    box-shadow: 0 0 0 0 #709dca
+    transition: box-shadow .5s, background-color .5s, border .3s
+    &:hover
+      box-shadow: 0 29px 0 6px #709dca, 0 -29px 0 6px #709dca
+      background-color: #709dca
+      z-index: 2
+      border: none
+    &:hover .plan__clause
+      color: #c2e1ff
+    &:hover .plan__title,
+    &:hover .plan__cost,
+    &:hover .plan__month
+      color: #fff
+
+.plan
+  &__title
+    font-family: latolight, sans-serif
+    color: #818b95
+    font-size: 25px
+    font-weight: 300
+    margin: 57px 0 19px
+  &__cost
+    font-family: latobold, sans-serif
+    color: #ffbb42
+    font-size: 60px
+    font-weight: 700
+    position: relative
+    padding-left: 10px
+    &::before
+      left: -10px
+      content: "$"
+      font-size: 40px
+      font-weight: 700
+      position: absolute
+  &__month
+    font-family: latolight, sans-serif
+    color: #818b95
+    font-size: 15px
+    font-weight: 300
+    text-align: center
+    margin-top: -5px
+    margin-bottom: 27px
+  &__clause
+    width: 84%
+    border-top: 1px solid #e2e9f0
+    margin: 0 auto
+    font-family: latoregular, sans-serif
+    color: #b5bbc1
+    font-size: 13.5px
+    font-weight: 400
+    line-height: 40px
+    text-align: center
+  &__btn
+    @extend %btn
+    width: 131px
+    height: 42px
+    margin: 18px auto 0
+    cursor: pointer
+    background-image: -webkit-linear-gradient(top, #ffd5a0, #ffc155 35%, #f5b755 90%)
+    &:hover
+      background-image: -webkit-linear-gradient(top, #ffc88c, #ffba41 35%, #f5b137 90%)
+
+.work
+  background-color: #fff
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    min-height: 858px
+    text-align: center
+  &__title
+    @extend %title
+    color: #394b50
+    margin-top: 155px
+  &__text
+    font-family: latolight, sans-serif
+    font-size: 18px
+    color: #394b50
+  &__step
+    @extend %flex
+    @include justify-content(space-between)
+    @include flex-wrap(nowrap)
+    margin: 75px auto 30px
+    width: 1114px
+    max-width: 96.5%
+  &__btn
+    @extend %btn
+    width: 165px
+    margin: 91px auto 149px
+    font-family: latoregular, sans-serif
+
+.step
+  &__item
+    width: 213px
+  &__icon
+    color: #709ec8
+    font-size: 70px
+    margin-top: 31px
+  &__title
+    text-transform: uppercase
+    color: #394b50
+    font-family: latobold, sans-serif
+    font-size: 20px
+    font-weight: 700
+    margin-top: 100px
+  &__text
+    font-family: open_sansregular, sans-serif
+    font-size: 13px
+    line-height: 22px
+    color: #7b7b7b
+    margin-top: 23px
+  &__arrow
+    width: 110px
+    height: 70px
+    border-radius: 50%
+    border-top: 2px dashed #76a1cc
+    position: relative
+    margin: 0 -14px
+    &::after
+      content: ""
+      border-top: 8px solid #76a1cc
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      position: absolute
+      top: 23px
+      right: -6px
+      transform: rotate(-45deg)
+    &::before
+      content: ""
+      border-top: 8px solid #76a1cc
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      position: absolute
+      top: 23px
+      left: -6px
+      transform: rotate(45deg)
+  &__arrow--medium
+    transform: scaleY(-1)
+    margin: 118px -14px 0 -14px
+
+.clients
+  background-color: $orange
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    min-height: 908px
+    text-align: center
+  &__title
+    @extend %title
+    color: #ffffff
+    letter-spacing: -0.75px
+    margin-top: 141px
+  &__text
+    color: #ffffff
+    font-family: open_sansregular, sans-serif
+    font-size: 16px
+    font-weight: 400
+  &__wrap
+    width: 1208px
+    max-width: 96.7%
+    @extend %flex
+    @include justify-content(space-between)
+    @include flex-wrap(wrap)
+    margin: 58px auto 160px
+  &__comments
+    width: 567px
+    max-width: 47%
+    min-height: 241px
+    background-color: #ffffff
+    padding: 43px 30px 0
+    box-sizing: border-box
+    text-align: left
+    margin: 20px 1.45% 0
+
+.comments
+  &__foto
+    width: 121px
+    height: 121px
+    border-radius: 50%
+    float: left
+
+@for $i from 1 to 5
+  .comments__foto-#{$i}
+    background: url(../images/foto-#{$i}.jpg) 50%
+    background-size: cover
+
+.comments
+  &__text
+    color: #7b7b7b
+    font-family: open_sansregular, sans-serif
+    font-size: 13px
+    font-weight: 400
+    line-height: 22px
+    margin-left: 152px
+  &__author
+    font-family: latoregular, sans-serif
+    font-size: 14px
+    font-weight: 400
+    text-transform: uppercase
+    color: #f6772c
+    margin: 29px 0 51px 152px
+    &--grey
+      color: #99a9ae
+  &__quote
+    font-size: 9px
+    font-weight: 100
+    &--left
+      margin: 0 7px 0 -20px
+    &--right
+      margin-left: 15px
+
+.contact
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    text-align: center
+  &__title
+    @extend %title
+    margin-top: 154px
+    color: #394b50
+  &__text
+    color: #394b50
+    font-family: open_sansregular, sans-serif
+  &__form
+    width: 934px
+    max-width: 95.8%
+    text-align: left
+    margin: 38px auto 0
+    @extend %flex
+    @include justify-content(center)
+  &__wrap-name
+    height: 48px
+    width: 308px
+    position: relative
+    box-sizing: border-box
+    margin-right: 10px
+    &::before
+      @extend %icon-input
+      content: "\f007"
+  &__name
+    @extend %input
+    border: 1px solid #cbcbcb
+    height: 48px
+  &__wrap-email
+    height: 48px
+    position: relative
+    width: 388px
+    box-sizing: border-box
+    margin-right: 10px
+    &::before
+      @extend %icon-input
+      content: "\f0e0"
+  &__email
+    @extend %input
+    border: 1px solid #cbcbcb
+    height: 48px
+  &__btn
+    @extend %btn
+    width: 218px
+    font-family: latoregular, sans-serif
+    float: left
+  &__map
+    margin: 53px auto 57px
+    width: 1102px
+    max-width: 96.4%
+    height: 549px
+    background: url(../images/map.png) 50% 50% no-repeat
+    background-size: cover
+    box-sizing: border-box
+    padding: 1px 0
+.map
+  &__circle
+    width: 280px
+    height: 292px
+    border: 3px solid #fff
+    border-radius: 50%
+    background-color: #394b50
+    position: relative
+    margin: 40px auto 0
+    box-sizing: border-box
+    &::after
+      content: ""
+      position: absolute
+      bottom: -11px
+      border-top: 15px solid #394b50
+      border-right: 8px solid transparent
+      border-left: 8px solid transparent
+      left: (280px - 16px) / 2
+.circle
+  &__title
+    color: #fff
+    font-family: latobold, sans-serif
+    font-size: 15px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 65px
+    margin-bottom: 19px
+  &__text
+    color: #aeb7ba
+    font-family: open_sansregular, sans-serif
+    font-size: 13px
+    line-height: 24px
+    &__--orange
+      color: #ffbb42
+  &__logo
+    @extend %logo
+    position: absolute
+    bottom: -70px
+    left: (280px - 50px) / 2
+
+.footer
+  &__container
+    @extend %min-width-all
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    border-top: 1px solid #e3e7ec
+    text-align: center
+    min-height: 219px
+  &__nav
+    margin: 50px auto 0
+    text-align: center
+  &__menu
+    display: inline-block
+    &::after
+      @extend %clearfix
+  &__number
+    font-family: latoregular, sans-serif
+    font-size: 23px
+    font-weight: 400
+  &__phone
+    color: #394b50
+    font-family: "Font Awesome 5 Free"
+    font-size: 20px
+    font-weight: 400
+    margin-top: 18px
+    transform: scaleX(-1)
+  &__number-link
+    color: #394b50
+  &__social
+    width: 104px
+    margin: 23px auto 0
+    @extend %flex
+    @include justify-content(space-between)
+.social
+  &__icon
+    color: #709dca
+    font-size: 18px
+    font-weight: 400
+    &:hover
+      color: #ffc155
+.footer
+  &__bottom
+    background-color: #709dca
+.bottom
+  &__container
+    @extend %min-width-all
+    min-height: 49px
+    max-width: $width-all
+    padding: 1px 20px
+    margin: 0 auto
+    box-sizing: border-box
+    text-align: center
+  &__text
+    color: #ffffff
+    font-family: open_sansregular, sans-serif
+    font-size: 13px
+    font-weight: 400
+    line-height: 49px
+
+
+// ---------------> media queries
+
+@media screen and (max-width: 1300px)
+  .header
+    &__logo
+      margin-right: 20%
+  .service
+    &__article
+      margin: 79px 3.8% 0
+
+@media screen and (max-width: 1200px)
+  .header
+    &__logo
+      margin-right: 16%
+  .step
+    &__arrow
+      margin: 0 -25px
+    &__arrow--medium
+      margin: 118px -25px 0 -25px
+
+@media screen and (max-width: 1100px)
+  .header
+    &__logo
+      margin-right: 10%
+  .request
+    &__form
+      @include justify-content(space-between)
+      @include flex-wrap(wrap)
+    &__btn
+      width: 49.3%
+  %wrap
+    width: 49.3%
+    margin-right: 0
+  .price
+    &__wrap
+      @include flex-wrap(wrap)
+      @include justify-content(center)
+      margin-bottom: 80px
+    &__plan
+      width: 70%
+      max-width: none
+      margin-bottom: 5px
+  .step
+    &__arrow
+      margin: 0 -35px
+    &__arrow--medium
+      margin: 118px -35px 0 -35px
+@media screen and (max-width: 1008px)
+  .header
+    &__nav
+      margin-bottom: -254px
+      width: 100%
+      float: right
+      box-sizing: border-box
+      margin-top: 24px
+    .nav
+      &__menu
+        width: 100%
+        float: right
+      &__item
+        width: 100%
+        text-align: center
+      &__link
+        border-top: 1px solid rgba(0, 0, 0, 0.12)
+        padding: 0 25px
+        width: 100%
+        box-sizing: border-box
+  .menu__trigger
+    display: block
+  .about
+    &__container
+      padding-right: 0
+      min-height: 1000px
+      padding-top: 1px
+    &__pic
+      top: 0
+      left: 0
+      right: 0
+      height: 500px
+      width: 100%
+    &__wrap
+      max-width: none
+      padding: 1px 60px 0
+      margin-top: 500px
+    &__title
+      margin-top: 100px
+  .work
+    &__step
+      @include flex-wrap(wrap)
+      margin-top: 25px
+  .step
+    &__item
+      width: 45%
+      margin-top: 30px
+    &__arrow
+      margin-top: 20px
+    &__arrow--medium
+      display: none
+  .clients
+    &__wrap
+      min-width: 96.7%
+    &__comments
+      min-width: 97%
+  .contact
+    &__form
+      @include flex-wrap(wrap)
+    &__wrap-name
+      width: 49%
+      margin-right: 1.9%
+    &__wrap-email
+      width: 49%
+      margin-right: 0
+    &__btn
+      width: 49%
+      margin-top: 30px
+
+@media screen and (max-width: 900px)
+  .price
+    &__plan
+      width: 80%
+  .footer
+    &__nav
+      display: none
+    &__container
+      min-height: 130px
+    &__phone
+      margin-top: 35px
+
+@media screen and (max-width: 800px)
+  .request
+    &__slider
+      width: 518px
+      height: 304px
+  .slider
+    &__top
+      width: 387px
+      height: 251px
+    &__screen
+      height: 211px
+      width: 356px
+      margin: 19px auto 0
+    &__clip
+      height: 211px
+      width: 356px
+      box-sizing: border-box
+    &__medium
+      width: 519px
+      height: 16px
+      margin: 0 auto
+    &__btn
+      width: 71px
+      height: 7px
+    &__right
+      height: 3px
+      width: 16px
+      margin-right: 23px
+    &__bottom
+      width: 482px
+  .contact
+    &__wrap-name
+      width: 90%
+      margin-right: 0
+    &__wrap-email
+      width: 90%
+      margin-top: 30px
+    &__btn
+      width: 90%
+  .service
+    &__article
+      max-width: none
+      width: 80%
+  .price
+    &__plan
+      width: 85%
+
+@media screen and (max-width: 700px)
+  .about
+    &__wrap
+      padding: 1px 20px 0
+  .price
+    &__plan
+      width: 90%
+  .work
+    &__step
+      @include justify-content(center)
+  .step
+    &__item
+      width: 80%
+      margin-top: 30px
+      margin-right: 8%
+      margin-left: 8%
+    &__arrow
+      height: 55px
+      width: 0
+      margin-left: 20%
+      margin-right: 20%
+      border-radius: 0
+      border-left: 2px dotted #76a1cc
+      margin-top: 40px
+      &::before
+        top: -7px
+        left: -6px
+        transform: rotate(180deg)
+      &::after
+        top: 50px
+        right: -4px
+        transform: rotate(0)
+    &__arrow--medium
+      display: block
+      transform: none
+  .bottom
+    &__text
+      line-height: 20px
+      margin-top: 15px
+      margin-bottom: 15px
+
+@media screen and (max-width: 600px)
+  .request
+    &__form
+      @include flex-wrap(wrap)
+      @include justify-content(center)
+    &__btn
+      width: 85%
+  %wrap
+    width: 85%
+  .request
+    &__slider
+      display: none
+  .service
+    &__article
+      max-width: none
+      width: 100%
+      margin: 70px 15px 0
+    &__title
+      margin-top: 100px
+  .price
+    &__plan
+      width: 98%
+
+@media screen and (max-width: 500px)
+  .request
+    &__btn
+      width: 95%
+    %wrap
+      width: 95%
+  .service
+    &__article
+      margin: 50px 15px 0
+    &__icon
+      float: none
+      margin: 0 auto 30px
+      display: block
+  .comments
+    &__foto
+      float: none
+      margin: 0 auto 20px
+    &__text
+      margin-left: 0
+    &__author
+      margin: 29px 0 51px
+
+@media screen and (max-width: 400px)
+  .request
+    &__btn
+      margin-bottom: 50px
+
+// ---------------> js menu
+.display-block
+  display: block
+
+// ---------------> modal
+#modal_form
+  width: 360px
+  height: 350px
+  border-radius: 5px
+  border: 3px solid #709DCA
+  background: $blue
+  position: fixed
+  top: 35%
+  left: 50%
+  margin-top: -150px
+  margin-left: -179px
+  display: none
+  opacity: 0
+  z-index: 5
+  padding: 20px 10px
+  box-sizing: border-box
+
+#modal_form #modal_close
+  width: 21px
+  height: 21px
+  position: absolute
+  top: 10px
+  right: 10px
+  cursor: pointer
+  display: block
+  color: #fff
+
+#overlay
+  z-index: 3
+  position: fixed
+  background-color: #000
+  -moz-opacity: 0.8
+  opacity: 0.8
+  filter: alpha(opacity=80)
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  cursor: pointer
+  display: none
+
+.modal
+  &__wrap-name
+    position: relative
+    height: 46px
+    margin-top: 23px
+    &::before
+      @extend %icon-input
+      content: "\f007"
+  &__wrap-email
+    position: relative
+    height: 46px
+    margin-top: 25px
+    &::before
+      @extend %icon-input
+      content: "\f0e0"
+  &__wrap-phone
+    position: relative
+    height: 46px
+    margin-top: 25px
+    &::before
+      @extend %icon-input
+      content: "\f095"
+      transform: scaleX(-1)
+  &__input
+    @extend %input
+  &__text
+    font-family: latoregular, sans-serif
+    color: #ffffff
+    font-size: 15px
+    font-weight: 300
+    text-align: center
+    margin-top: 22px
+    text-transform: uppercase
+    line-height: 27px
+    padding: 0 35px
+    letter-spacing: .8px
+  &__btn
+    @extend %btn
+    margin: 40px auto 0
+    display: block
+
+// ---------------> button to top
+
+#toTop
+  width: 50px
+  height: 50px
+  background: rgba(0, 0, 0, 0.48)
+  color: rgb(255, 255, 255)
+  border-radius: 50%
+  text-align: center
+  position: fixed
+  bottom: 30px
+  right: 20px
+  cursor: pointer
+  display: none
+  font-size: 15px
+  .fas
+    font-size: 15px
+    &:before
+      line-height: 50px
+
+// ---------------> validation form
+label.error
+  display: inline-block
+  margin-top: 2px
+  font-family: latoregular, sans-serif
+.contact
+  label.error
+    color: rgb(81, 77, 77)
+.modal__form label.error,
+.request label.error
+    color: rgb(255, 255, 255)
+
+// ---------------> message after validation form
+
+.message-success
+  font-family: open_sansregular, sans-serif
+  font-weight: 300
+  font-size: 16px
+  position: absolute
+  width: 100%
+  margin-top: 5px
+  text-transform: uppercase
+
+.request .message-success
+  color: #fff
+
+.contact .message-success
+  color: #535353
+
+
